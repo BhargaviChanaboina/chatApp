@@ -1,0 +1,22 @@
+<div class="panel panel-default" style="">
+        <div class="panel-heading">Company Profile</div>
+            <div class="panel-body"><center>
+                <table class="table">
+                        <tr><td class="h">COMPANY NAME :</td><td class="d">{{company.companyName}}</td></tr>
+                        <tr><td class="h">COMPANY LOCATION :</td><td class="d">{{company.companyLoc}}</td></tr>
+                        <tr><td class="h">CTC :</td><td class="d">{{company.CTC}}</td></tr>
+                        <tr><td class="h">BOND PERIOD :</td><td class="d">{{company.bondPeriod}}</td></tr>
+                        <tr><td class="h">DOMAIN :</td><td class="d">{{company.domain}}</td></tr>
+                        <tr><td class="h">EXAM PATTERN :</td><td class="d">{{company.examPattern}}</td></tr>
+                        <tr><td class="h">DOI :</td><td class="d">{{company.DOI}}</td></tr>
+                        <tr><td class="h">DOJ :</td><td class="d">{{company.DOJ}}</td></tr>
+                        <tr><td class="h">ABOUT COMPANY :</td><td class="d">{{company.aboutCmpny}}</td></tr>
+                        <tr><td class="h">Type :</td><td class="d">{{company.type}}</td></tr>
+                        <tr><td class="h">YEAR :</td><td class="d">{{company.year}}</td></tr>
+                        </table></center>
+        <button ng-model="button" class="btn btn-primary" ng-click="applyCompany(company.companyName)">Apply</button>
+</div>
+<div>
+        <strong>{{addRmsg}}</strong>
+        </div>
+</div>

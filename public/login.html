@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat</title>
+	<meta charset="utf-8">
+	<base href="/index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- angular dependencies -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <!-- bootstrap dependencies -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- custom angular -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers/signupCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/validateUser.js"></script>
+    <script type="text/javascript" src="js/appRoutes.js"></script>
+        <!-- reports -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+</head>
+<body ng-app="chatApp" ng-controller="appCtrl">
+	
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <img src="logo.png">
+                </div>
+
+                <ul class="list-unstyled components">
+                    <p>Dashboard</p>
+                    <li >
+                        <a href="/login1"><i class="fa fa-university" aria-hidden="true"></i> Login</a>
+                    </li>
+                    <li>
+                        <a href="/addUser"><i class="fa fa-university" aria-hidden="true"></i> Register</a>
+                    </li>
+                </ul>
+
+               
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-danger navbar-btn">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                                <span>Menu</span>
+                            </button>
+                        </div>
+
+                       <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                            </ul>
+                        </div>-->
+                    </div>
+                </nav>
+
+                <div style="padding: 10px;">
+                	<div ng-view></div>
+                    
+                    </div>
+            </div>
+        </div>
+<script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                 });
+             });
+</script>
+</body>
+</html>
+<script type="text/javascript">
+    new Morris.Line({
+  element: 'myfirstchart',
+  data: [
+    { year: '2013', value: 580 },
+    { year: '2014', value: 310 },
+    { year: '2015', value: 456 },
+    { year: '2016', value: 577 },
+    { year: '2017', value: 620 }
+  ],
+  xkey: 'year',
+  ykeys: ['value'],
+  labels: ['Placed']
+});
+new Morris.Bar({
+  element: 'barchart',
+  data: [
+    { y: '2011', a: 500, b: 90 },
+    { y: '2012', a: 575,  b: 65 },
+    { y: '2013', a: 550,  b: 40 },
+    { y: '2014', a: 475,  b: 65 },
+    { y: '2015', a: 550,  b: 40 },
+    { y: '2016', a: 575,  b: 65 },
+    { y: '2017', a: 600, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Placed', 'Non Placed']
+});
+</script>
