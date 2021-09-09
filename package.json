@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "lint": "eslint",
-    "test": "jest --forceExit"
+    "test": "jest --forceExit",
+    "start": "node server.js"
   },
   "author": "Bhargavi",
   "license": "ISC",
